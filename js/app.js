@@ -13,17 +13,12 @@ function showTab(){
 
 function toLetters() {
   var input = document.getElementById('binaryInput').value;
-  var inputBinary = [];
   var message = [];
 
-  var index = 0;
-  for (var i = 0; i < input.length; i = i+9) {
-    inputBinary[index] = input.substr(i, 8);
-    index++;
-  }
+  input = input.split(" ");
 
-  for (var i = 0; i < inputBinary.length; i++) {
-    message[i] = String.fromCharCode(parseInt(inputBinary[i], 2));
+  for (var i = 0; i < input.length; i++) {
+    message[i] = String.fromCharCode(parseInt(input[i], 2));
   }
 
   message = message.join("");
